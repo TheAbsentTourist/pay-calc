@@ -21,6 +21,12 @@ var savings_amount: float = 0.0
 var invest_amount: float = 0.0
 
 func _process(delta: float) -> void:
+	if (tithe_input.value + savings_input.value + invest_input.value) > 100.0:
+		tithe_input.value = 10.0
+		savings_input.value = 20.0
+		invest_input.value = 20.0
+		pass
+	
 	tithe_amount = pay_input.value * tithe_in
 	savings_amount = pay_input.value * savings_in
 	invest_amount = pay_input.value * invest_in
