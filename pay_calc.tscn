@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://bmxrnfbupy2qr"]
+
+[ext_resource type="Script" uid="uid://jpghm1q8fulh" path="res://pay_calc.gd" id="1_krmdy"]
+
+[node name="PayCalc" type="Node2D" unique_id=1823747267]
+script = ExtResource("1_krmdy")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1588148532]
+
+[node name="In" type="VBoxContainer" parent="." unique_id=129196707]
+offset_left = -502.0
+offset_top = -268.0
+offset_right = -326.0
+offset_bottom = -132.0
+
+[node name="PayInput" type="SpinBox" parent="In" unique_id=1543616228]
+layout_mode = 2
+step = 0.01
+allow_greater = true
+
+[node name="Label" type="Label" parent="In/PayInput" unique_id=588846876]
+layout_mode = 0
+offset_left = 181.0
+offset_top = -12.0
+offset_right = 732.0
+offset_bottom = 41.0
+theme_override_font_sizes/font_size = 35
+text = "Paycheck amount"
+
+[node name="TitheInput" type="SpinBox" parent="In" unique_id=1284666309]
+layout_mode = 2
+value = 10.0
+suffix = "%"
+
+[node name="Label" type="Label" parent="In/TitheInput" unique_id=974334318]
+layout_mode = 0
+offset_left = 181.0
+offset_top = -12.0
+offset_right = 732.0
+offset_bottom = 41.0
+theme_override_font_sizes/font_size = 35
+text = "Tithe Percentage"
+
+[node name="SavingsInput" type="SpinBox" parent="In" unique_id=853754827]
+layout_mode = 2
+value = 20.0
+suffix = "%"
+
+[node name="Label" type="Label" parent="In/SavingsInput" unique_id=895495170]
+layout_mode = 0
+offset_left = 181.0
+offset_top = -12.0
+offset_right = 732.0
+offset_bottom = 41.0
+theme_override_font_sizes/font_size = 35
+text = "Savings Percentage"
+
+[node name="InvestInput" type="SpinBox" parent="In" unique_id=988443494]
+layout_mode = 2
+value = 20.0
+suffix = "%"
+
+[node name="Label" type="Label" parent="In/InvestInput" unique_id=665241414]
+layout_mode = 0
+offset_left = 181.0
+offset_top = -12.0
+offset_right = 732.0
+offset_bottom = 41.0
+theme_override_font_sizes/font_size = 35
+text = "Investment Percentage"
+
+[node name="Out" type="VBoxContainer" parent="." unique_id=161346466]
+offset_left = -502.0
+offset_top = 78.0
+offset_right = -326.0
+offset_bottom = 214.0
+
+[node name="SpendingOut" type="Label" parent="Out" unique_id=2065860157]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Paycheck amount"
+
+[node name="TitheOut" type="Label" parent="Out" unique_id=639906570]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Tithe Percentage"
+
+[node name="SavingsOut" type="Label" parent="Out" unique_id=1136025034]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Savings Percentage"
+
+[node name="InvestOut" type="Label" parent="Out" unique_id=2135016544]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Investment Percentage"
