@@ -10,6 +10,7 @@ extends Node2D
 @onready var tithe_out: Label = $Out/TitheOut
 @onready var savings_out: Label = $Out/SavingsOut
 @onready var invest_out: Label = $Out/InvestOut
+@onready var percent_out: Label = $PercentOut
 
 @onready var tithe_in: float = (tithe_input.value / 100.0)
 @onready var savings_in: float = (savings_input.value / 100.0)
@@ -22,10 +23,9 @@ var invest_amount: float = 0.0
 
 func _process(delta: float) -> void:
 	if (tithe_input.value + savings_input.value + invest_input.value) > 100.0:
-		tithe_input.value = 10.0
-		savings_input.value = 20.0
-		invest_input.value = 20.0
-		pass
+		savings_input.value = savings_input.value - 1
+		if savings_input.value == 0 and (tithe_input.value + savings_input.value + invest_input.value) > 100.0:
+			invest_input.value = invest_input.value - 1
 	
 	tithe_amount = pay_input.value * tithe_in
 	savings_amount = pay_input.value * savings_in
@@ -36,4 +36,4 @@ func _process(delta: float) -> void:
 	tithe_out.text = "Tithe: $" + str("%.2f" % tithe_amount)
 	savings_out.text = "Savings: $" + str("%.2f" % savings_amount)
 	invest_out.text = "Invest: $" + str("%.2f" % invest_amount)
-	pass
+	percent_out.text = "Total Percent Taken: " + str("%1.0f" % (tithe_input.value + savings_input.value + invest_input.value)) + str("%")
