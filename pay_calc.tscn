@@ -89,19 +89,19 @@ offset_bottom = 214.0
 [node name="SpendingOut" type="Label" parent="Out" unique_id=2065860157]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "Paycheck amount"
+text = "Spend Out"
 
 [node name="TitheOut" type="Label" parent="Out" unique_id=639906570]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "Tithe Percentage"
+text = "Tithe Out"
 
 [node name="SavingsOut" type="Label" parent="Out" unique_id=1136025034]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "Savings Percentage"
+text = "Savings Out"
 
 [node name="InvestOut" type="Label" parent="Out" unique_id=2135016544]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "Investment Percentage"
+text = "Investment Out"
