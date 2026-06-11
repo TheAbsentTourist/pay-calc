@@ -8,10 +8,10 @@ script = ExtResource("1_krmdy")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1588148532]
 
 [node name="PercentOut" type="Label" parent="." unique_id=285464806]
-offset_left = -502.0
-offset_top = -128.0
-offset_right = -197.0
-offset_bottom = -79.0
+offset_left = -501.0
+offset_top = -95.0
+offset_right = -196.0
+offset_bottom = -46.0
 theme_override_font_sizes/font_size = 35
 text = "Percentage"
 
@@ -79,6 +79,22 @@ offset_right = 747.0
 offset_bottom = 43.0
 theme_override_font_sizes/font_size = 35
 text = "Investment Percentage"
+
+[node name="InvestDivisionInput" type="SpinBox" parent="In" unique_id=334384285]
+layout_mode = 2
+min_value = 1.0
+value = 1.0
+allow_greater = true
+update_on_text_changed = true
+
+[node name="Label" type="Label" parent="In/InvestDivisionInput" unique_id=2131051875]
+layout_mode = 0
+offset_left = 196.0
+offset_top = -10.0
+offset_right = 747.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 35
+text = "Investment Division"
 
 [node name="Out" type="VBoxContainer" parent="." unique_id=161346466]
 offset_left = -502.0

@@ -4,6 +4,7 @@ extends Node2D
 @onready var tithe_input: SpinBox = $In/TitheInput
 @onready var savings_input: SpinBox = $In/SavingsInput
 @onready var invest_input: SpinBox = $In/InvestInput
+@onready var invest_division_input: SpinBox = $In/InvestDivisionInput
 
 
 @onready var spending_out: Label = $Out/SpendingOut
@@ -20,6 +21,7 @@ var spending_amount: float = 0.0
 var tithe_amount: float = 0.0
 var savings_amount: float = 0.0
 var invest_amount: float = 0.0
+var invest_divided_amount: float = 0.0
 
 func _process(delta: float) -> void:
 	if (tithe_input.value + savings_input.value + invest_input.value) > 100.0:
@@ -30,10 +32,14 @@ func _process(delta: float) -> void:
 	tithe_amount = pay_input.value * tithe_in
 	savings_amount = pay_input.value * savings_in
 	invest_amount = pay_input.value * invest_in
+	invest_divided_amount = invest_amount / invest_division_input.value
 	spending_amount = (pay_input.value - tithe_amount - savings_amount - invest_amount)
 	
 	spending_out.text = "Spending: $" + str("%.2f" % spending_amount)
 	tithe_out.text = "Tithe: $" + str("%.2f" % tithe_amount)
 	savings_out.text = "Savings: $" + str("%.2f" % savings_amount)
-	invest_out.text = "Invest: $" + str("%.2f" % invest_amount)
+	if invest_divided_amount > 1:
+		invest_out.text = "Invest: $" + str("%.2f" % invest_amount) + "  |  " + str("%.2f" % invest_divided_amount) + "  x  " + str("%1.0f" % invest_division_input.value)
+	else:
+		invest_out.text = "Invest: $" + str("%.2f" % invest_amount)
 	percent_out.text = "Total Percent Taken: " + str("%1.0f" % (tithe_input.value + savings_input.value + invest_input.value)) + str("%")
