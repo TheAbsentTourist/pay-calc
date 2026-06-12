@@ -30,8 +30,8 @@ func _process(delta: float) -> void:
 			invest_input.value = invest_input.value - 1
 	
 	tithe_amount = pay_input.value * tithe_in
-	savings_amount = pay_input.value * savings_in
-	invest_amount = pay_input.value * invest_in
+	savings_amount = (pay_input.value - tithe_amount) * savings_in
+	invest_amount = (pay_input.value - tithe_amount) * invest_in
 	invest_divided_amount = invest_amount / invest_division_input.value
 	spending_amount = (pay_input.value - tithe_amount - savings_amount - invest_amount)
 	
